@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slowOrbit1 {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(140px, -80px) scale(1.18) rotate(45deg);
+  }
+  50% {
+    transform: translate(80px, 120px) scale(0.92) rotate(90deg);
+  }
+  75% {
+    transform: translate(-90px, 60px) scale(1.12) rotate(135deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(180deg);
+  }
+}
+
+@keyframes slowOrbit2 {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(-120px, 100px) scale(1.22) rotate(-45deg);
+  }
+  50% {
+    transform: translate(-60px, -90px) scale(0.88) rotate(-90deg);
+  }
+  75% {
+    transform: translate(100px, -50px) scale(1.15) rotate(-135deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(-180deg);
+  }
+}
+
+@keyframes slowOrbit3 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(100px, 90px) scale(1.25);
+  }
+  66% {
+    transform: translate(-100px, -60px) scale(0.85);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+.animate-slow-orbit-1 {
+  animation: slowOrbit1 20s ease-in-out infinite alternate, pulseGlow 8s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+.animate-slow-orbit-2 {
+  animation: slowOrbit2 24s ease-in-out infinite alternate, pulseGlow 10s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+.animate-slow-orbit-3 {
+  animation: slowOrbit3 28s ease-in-out infinite alternate, pulseGlow 12s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 26s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
