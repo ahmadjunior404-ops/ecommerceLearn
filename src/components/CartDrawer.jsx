@@ -230,19 +230,19 @@ const CartDrawer = () => {
               <button
                 onClick={handleSimulateCheckout}
                 disabled={isCheckingOut}
-                style={{ backgroundColor: '#fbbf24', color: '#09090b' }}
-                className="w-full py-4 bg-amber-400 hover:bg-amber-300 text-zinc-950 text-xs font-black uppercase tracking-wider rounded-xl shadow-lg hover:shadow-xl shadow-amber-400/25 transition-all flex items-center justify-center gap-2.5 group cursor-pointer border border-amber-300"
+                style={{ backgroundColor: '#09090b', color: '#ffffff' }}
+                className="w-full py-4 bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-xl transition-all flex items-center justify-center gap-2.5 group cursor-pointer border border-zinc-800 hover:border-zinc-700 active:scale-[0.99]"
               >
                 {isCheckingOut ? (
                   <span className="flex items-center gap-2">
-                    <span className="animate-spin rounded-full h-3.5 w-3.5 border-2 border-zinc-950 border-t-transparent"></span>
-                    <span className="text-zinc-950 font-black">Connecting to Paystack...</span>
+                    <span className="animate-spin rounded-full h-3.5 w-3.5 border-2 border-white border-t-transparent"></span>
+                    <span className="text-white font-black" style={{ color: '#ffffff' }}>Connecting to Paystack...</span>
                   </span>
                 ) : (
                   <>
-                    <span className="text-zinc-950 font-black tracking-wider text-xs" style={{ color: '#09090b' }}>PROCEED TO CHECKOUT</span>
-                    <span className="bg-zinc-950 text-amber-400 px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-normal" style={{ backgroundColor: '#09090b', color: '#fbbf24' }}>Paystack</span>
-                    <ArrowRight className="w-4 h-4 text-zinc-950 group-hover:translate-x-1 transition-transform" style={{ color: '#09090b' }} />
+                    <span className="text-white font-black tracking-wider text-xs uppercase" style={{ color: '#ffffff' }}>PROCEED TO CHECKOUT</span>
+                    <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-normal" style={{ color: '#6ee7b7' }}>Paystack</span>
+                    <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" style={{ color: '#ffffff', stroke: '#ffffff' }} />
                   </>
                 )}
               </button>

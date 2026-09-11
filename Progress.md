@@ -98,6 +98,16 @@ The application features:
   - **Navbar.jsx**: Updated Cart button to matching gold with bold dark text (`style={{ backgroundColor: '#fbbf24', color: '#09090b' }}`).
   - **Verification**: Verified production build with `npm run build` (Exit Code 0).
 
+### Milestone 10: Luxury Black Buttons with High-Contrast White "Add To Cart — Checkout" Text
+- **Timestamp**: September 11, 2026
+- **Context**: User correction: *"i dont want the yellow gold color for checkout, can you make it black and the add to cart-checkout to be visible"*. Clarified that yellow gold was not wanted; the user wants sleek luxury black buttons, but with the text ("Add To Cart — Checkout" / "PROCEED TO CHECKOUT") and icons unmistakably bright and visible in pure white (`#ffffff`).
+- **Solution & Files Modified**:
+  - **QuickViewModal.jsx**: Primary button set to luxury black (`#09090b` / `bg-zinc-950 hover:bg-zinc-800`), explicit inline `style={{ backgroundColor: '#09090b', color: '#ffffff' }}`, white shopping bag icon (`stroke: #ffffff`), and white text (`#ffffff`) reading **`Add To Cart — Checkout`** (or Bespoke Pre-Order for traditional wear).
+  - **ProductCard.jsx**: Reverted card direct buttons from yellow gold to luxury black (`#09090b` / `bg-zinc-950 hover:bg-zinc-800`), explicit inline `style={{ backgroundColor: '#09090b', color: '#ffffff' }}`, white shopping bag icon, and pure white text reading **`Add to Cart — Checkout`**.
+  - **CartDrawer.jsx**: Reverted checkout button from yellow gold to luxury black (`#09090b` / `bg-zinc-950 hover:bg-zinc-800`), explicit inline `style={{ backgroundColor: '#09090b', color: '#ffffff' }}`, bright pure white text **`PROCEED TO CHECKOUT`**, emerald Paystack badge, and white arrow/spinner.
+  - **Navbar.jsx**: Reverted Cart button from yellow gold to sleek black (`#09090b` / `bg-zinc-950 hover:bg-zinc-800`), explicit inline `style={{ backgroundColor: '#09090b', color: '#ffffff' }}`, white shopping bag icon, and pure white text **`Cart ({cartCount})`**.
+  - **Verification**: Built and verified with `npm run build` (Exit Code 0, 1866 modules transformed).
+
 ---
 
 ## 📊 3. Feature Inventory & Current Status

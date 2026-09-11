@@ -167,15 +167,15 @@ const ProductCard = ({ product, dark = false }) => {
                 setIsCartOpen(true);
               }
             }}
-            style={{ backgroundColor: '#fbbf24', color: '#09090b' }}
-            className="mt-3 w-full py-2.5 bg-amber-400 hover:bg-amber-300 text-zinc-950 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md cursor-pointer border border-amber-300"
+            style={{ backgroundColor: '#09090b', color: '#ffffff' }}
+            className="mt-3 w-full py-2.5 bg-zinc-950 hover:bg-zinc-800 text-white rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg cursor-pointer border border-zinc-800 active:scale-[0.99]"
           >
             <ShoppingBag 
-              className="w-3.5 h-3.5 shrink-0" 
-              style={{ color: '#09090b' }} 
+              className="w-3.5 h-3.5 shrink-0 text-white" 
+              style={{ color: '#ffffff', stroke: '#ffffff' }} 
             />
-            <span style={{ color: '#09090b' }} className="text-zinc-950 font-black">
-              {product.isTraditional ? 'Pre-Order (Bespoke)' : 'Add to Cart'}
+            <span style={{ color: '#ffffff' }} className="text-white font-black tracking-wider text-xs uppercase">
+              {product.isTraditional ? 'Pre-Order (Bespoke)' : 'Add to Cart — Checkout'}
             </span>
           </button>
         </div>

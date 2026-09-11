@@ -467,12 +467,12 @@ const Navbar = () => {
             {/* Exact "Cart (0)" Button */}
             <button
               onClick={() => setIsCartOpen(true)}
-              style={{ backgroundColor: '#fbbf24', color: '#09090b' }}
-              className="flex items-center gap-2 px-4 py-2.5 bg-amber-400 hover:bg-amber-300 text-zinc-950 rounded-full text-xs font-black uppercase tracking-wider transition-all shadow-sm hover:shadow-md group border border-amber-300 cursor-pointer"
+              style={{ backgroundColor: '#09090b', color: '#ffffff' }}
+              className="flex items-center gap-2 px-4 py-2.5 bg-zinc-950 hover:bg-zinc-800 text-white rounded-full text-xs font-black uppercase tracking-wider transition-all shadow-sm hover:shadow-md group border border-zinc-800 cursor-pointer"
               aria-label="Shopping Cart and Checkout"
             >
-              <ShoppingBag className="w-4 h-4 text-zinc-950 group-hover:scale-110 transition-transform" style={{ color: '#09090b' }} />
-              <span className="text-zinc-950 font-black" style={{ color: '#09090b' }}>Cart ({cartCount})</span>
+              <ShoppingBag className="w-4 h-4 text-white group-hover:scale-110 transition-transform" style={{ color: '#ffffff', stroke: '#ffffff' }} />
+              <span className="text-white font-black" style={{ color: '#ffffff' }}>Cart ({cartCount})</span>
             </button>
           </div>
 

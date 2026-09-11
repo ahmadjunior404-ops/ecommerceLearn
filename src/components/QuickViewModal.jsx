@@ -343,16 +343,16 @@ const QuickViewModal = () => {
               <div className="flex gap-3">
                 <button
                   onClick={handleAddToCart}
-                  style={{ backgroundColor: '#fbbf24', color: '#09090b' }}
-                  className="flex-1 py-3.5 bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-xs uppercase tracking-wider rounded-xl shadow-lg hover:shadow-xl shadow-amber-400/25 transition-all flex items-center justify-center gap-2 cursor-pointer border border-amber-300"
+                  style={{ backgroundColor: '#09090b', color: '#ffffff' }}
+                  className="flex-1 py-4 bg-zinc-950 hover:bg-zinc-800 text-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-xl shadow-xl transition-all flex items-center justify-center gap-2.5 cursor-pointer border border-zinc-800 hover:border-zinc-700 active:scale-[0.99]"
                 >
                   <ShoppingBag 
-                    className="w-4 h-4 shrink-0" 
-                    style={{ color: '#09090b' }} 
+                    className="w-4 h-4 shrink-0 text-white" 
+                    style={{ color: '#ffffff', stroke: '#ffffff' }} 
                   />
                   <span 
-                    className="font-black text-xs uppercase tracking-wider"
-                    style={{ color: '#09090b' }}
+                    className="font-black text-xs sm:text-sm uppercase tracking-wider text-white select-none"
+                    style={{ color: '#ffffff' }}
                   >
                     {isCouture ? 'Pre-Order (Bespoke Tailored)' : 'Add To Cart — Checkout'}
                   </span>
