@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
-import { Heart, ShoppingBag, Eye, Star } from 'lucide-react';
+import { Heart, Eye, Star } from 'lucide-react';
 
 const ProductCard = ({ product, dark = false }) => {
-  const { formatPrice, addToCart, toggleWishlist, isInWishlist, setQuickViewProduct, setIsCartOpen } = useShop();
+  const { formatPrice, toggleWishlist, isInWishlist, setQuickViewProduct } = useShop();
   const [isHovered, setIsHovered] = useState(false);
-  const [selectedSize, setSelectedSize] = useState(product.sizes ? product.sizes[0] : 'L');
 
   const isFavorited = isInWishlist(product.id);
 
@@ -63,14 +62,14 @@ const ProductCard = ({ product, dark = false }) => {
           <Heart className={`w-4 h-4 ${isFavorited ? 'fill-rose-500 text-rose-500' : ''}`} />
         </button>
 
-        {/* Overlay Quick Actions */}
-        <div className="absolute inset-x-3 bottom-3 z-10 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        {/* Overlay Quick Action */}
+        <div className="absolute inset-x-3 bottom-3 z-10 flex opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button
             onClick={(e) => {
               e.stopPropagation();
               setQuickViewProduct(product);
             }}
-            className={`flex-1 py-2.5 backdrop-blur-md text-xs font-bold rounded-lg shadow-lg flex items-center justify-center gap-1.5 transition-colors ${
+            className={`w-full py-2.5 backdrop-blur-md text-xs font-bold rounded-xl shadow-lg flex items-center justify-center gap-1.5 transition-colors cursor-pointer ${
               dark
                 ? 'bg-zinc-900/90 hover:bg-zinc-800 text-white border border-zinc-700'
                 : 'bg-white/95 hover:bg-white text-zinc-900'
@@ -78,28 +77,6 @@ const ProductCard = ({ product, dark = false }) => {
           >
             <Eye className="w-3.5 h-3.5" />
             <span>{product.isTraditional ? 'Custom Fit & Pre-Order' : 'Quick View'}</span>
-          </button>
-          
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              if (product.isTraditional) {
-                setQuickViewProduct(product);
-              } else {
-                addToCart(product, selectedSize, 1);
-                setIsCartOpen(true);
-              }
-            }}
-            className={`p-2.5 rounded-lg shadow-lg flex items-center justify-center transition-colors ${
-              product.isTraditional 
-                ? 'bg-amber-400 hover:bg-amber-300 text-zinc-950 font-bold' 
-                : dark
-                  ? 'bg-white hover:bg-amber-400 hover:text-zinc-950 text-zinc-950'
-                  : 'bg-zinc-950 hover:bg-amber-500 hover:text-zinc-950 text-white'
-            }`}
-            title={product.isTraditional ? 'Pre-Order with measurements' : 'Quick Add to Cart'}
-          >
-            <ShoppingBag className="w-4 h-4" />
           </button>
         </div>
       </div>
@@ -133,7 +110,7 @@ const ProductCard = ({ product, dark = false }) => {
           </h3>
         </div>
 
-        {/* Pricing & Add to Cart button */}
+        {/* Pricing */}
         <div className={`pt-2 border-t ${dark ? 'border-zinc-800' : 'border-zinc-100'}`}>
           <div className="flex items-baseline justify-between">
             <div className="flex items-baseline gap-2">
@@ -156,28 +133,6 @@ const ProductCard = ({ product, dark = false }) => {
               {product.isTraditional ? 'Bespoke Fit' : `${product.sizes?.length || 4} Sizes`}
             </div>
           </div>
-
-          {/* Direct Add to Cart Button */}
-          <button
-            onClick={() => {
-              if (product.isTraditional) {
-                setQuickViewProduct(product);
-              } else {
-                addToCart(product, selectedSize, 1);
-                setIsCartOpen(true);
-              }
-            }}
-            style={{ backgroundColor: '#09090b', color: '#ffffff' }}
-            className="mt-3 w-full py-2.5 bg-zinc-950 hover:bg-zinc-800 text-white rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg cursor-pointer border border-zinc-800 active:scale-[0.99]"
-          >
-            <ShoppingBag 
-              className="w-3.5 h-3.5 shrink-0 text-white" 
-              style={{ color: '#ffffff', stroke: '#ffffff' }} 
-            />
-            <span style={{ color: '#ffffff' }} className="text-white font-black tracking-wider text-xs uppercase">
-              {product.isTraditional ? 'Pre-Order (Bespoke)' : 'Add to Cart — Checkout'}
-            </span>
-          </button>
         </div>
       </div>
     </div>

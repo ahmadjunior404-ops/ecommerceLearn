@@ -354,7 +354,7 @@ const QuickViewModal = () => {
                     className="font-black text-xs sm:text-sm uppercase tracking-wider text-white select-none"
                     style={{ color: '#ffffff' }}
                   >
-                    {isCouture ? 'Pre-Order (Bespoke Tailored)' : 'Add To Cart — Checkout'}
+                    {isCouture ? 'Pre-Order (Bespoke Tailored)' : 'Add to Cart'}
                   </span>
                 </button>
 

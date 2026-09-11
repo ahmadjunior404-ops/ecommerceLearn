@@ -108,6 +108,33 @@ The application features:
   - **Navbar.jsx**: Reverted Cart button from yellow gold to sleek black (`#09090b` / `bg-zinc-950 hover:bg-zinc-800`), explicit inline `style={{ backgroundColor: '#09090b', color: '#ffffff' }}`, white shopping bag icon, and pure white text **`Cart ({cartCount})`**.
   - **Verification**: Built and verified with `npm run build` (Exit Code 0, 1866 modules transformed).
 
+### Milestone 11: Exclusive "Add To Cart — Checkout" Display on Single Product Page
+- **Timestamp**: September 11, 2026
+- **Context**: User requirement: *"let the add to card-checkout only showing in the single product page"*. The user instructed that the combined action/label **`Add To Cart — Checkout`** should only be displayed within the single product page/view (`QuickViewModal`), while catalog grid cards should display clean standard **`Add to Cart`**.
+- **Solution & Files Modified**:
+  - **ProductCard.jsx**: Updated action button label from `Add to Cart — Checkout` to `Add to Cart` (and `Pre-Order (Bespoke)` for traditional garments). Removed automatic cart drawer slide-out (`setIsCartOpen(true)`) on direct card click and hover quick-add so shoppers can continuously add items with floating toast feedback while browsing.
+  - **QuickViewModal.jsx**: Preserved **`Add To Cart — Checkout`** (and `Pre-Order (Bespoke Tailored)`) as the single product page's primary CTA, adding item to cart and opening the checkout drawer seamlessly.
+  - **Verification**: Built and verified with `npm run build` (Exit Code 0, 1866 modules transformed).
+
+### Milestone 12: Complete Removal of "Add To Cart" Button from Menswear Catalog Cards
+- **Timestamp**: September 11, 2026
+- **Context**: User photo verification: *"look at the add to cart my cursor is pointing to in the pic, i need you to remove that add to card in the all menswear"*. The user pointed their cursor directly to the bottom `ADD TO CART` button on the catalog cards in the All Menswear showcase and instructed its complete removal.
+- **Solution & Files Modified**:
+  - **ProductCard.jsx**:
+    - Removed the bottom direct `ADD TO CART` button entirely from the card.
+    - Simplified hover overlay into a single elegant, full-width `Quick View` (`Custom Fit & Pre-Order`) button that opens the single product page (`QuickViewModal`).
+    - Cleaned up unused variables and imports (`ShoppingBag`, `addToCart`, `setIsCartOpen`, `selectedSize`).
+    - Now all menswear cards (All Menswear showcase, Modern Essentials, Traditional Couture, New Arrivals) display an uncluttered editorial card ending with pricing and size availability.
+    - Sizing selection, pre-order measurement entry, and checkout initiation now happen exclusively on the single product page (`QuickViewModal`).
+  - **Verification**: Built and verified with `npm run build` (Exit Code 0, 1866 modules transformed cleanly).
+
+### Milestone 13: Single Product Page Action Updated to "Add to Cart"
+- **Timestamp**: September 11, 2026
+- **Context**: User instruction: *"good, now in the singleproduct page, let it show add to card instead of add to card-checkout"*.
+- **Solution & Files Modified**:
+  - **QuickViewModal.jsx**: Updated the single product page's primary purchase button text from `Add To Cart — Checkout` to `Add to Cart` (rendered uppercase as `ADD TO CART` in pure white `#ffffff` on sleek luxury black `#09090b` with explicit inline styling).
+  - **Verification**: Built and verified with `npm run build` (Exit Code 0, 1866 modules transformed).
+
 ---
 
 ## 📊 3. Feature Inventory & Current Status
