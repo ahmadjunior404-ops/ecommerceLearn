@@ -3,7 +3,7 @@ import { useShop } from '../context/ShopContext';
 import { Heart, ShoppingBag, Eye, Star } from 'lucide-react';
 
 const ProductCard = ({ product, dark = false }) => {
-  const { formatPrice, addToCart, toggleWishlist, isInWishlist, setQuickViewProduct } = useShop();
+  const { formatPrice, addToCart, toggleWishlist, isInWishlist, setQuickViewProduct, setIsCartOpen } = useShop();
   const [isHovered, setIsHovered] = useState(false);
   const [selectedSize, setSelectedSize] = useState(product.sizes ? product.sizes[0] : 'L');
 
@@ -87,6 +87,7 @@ const ProductCard = ({ product, dark = false }) => {
                 setQuickViewProduct(product);
               } else {
                 addToCart(product, selectedSize, 1);
+                setIsCartOpen(true);
               }
             }}
             className={`p-2.5 rounded-lg shadow-lg flex items-center justify-center transition-colors ${
@@ -163,18 +164,19 @@ const ProductCard = ({ product, dark = false }) => {
                 setQuickViewProduct(product);
               } else {
                 addToCart(product, selectedSize, 1);
+                setIsCartOpen(true);
               }
             }}
-            className={`mt-3 w-full py-2.5 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${
-              product.isTraditional 
-                ? 'bg-amber-400 hover:bg-amber-300 text-zinc-950 shadow-amber-400/20' 
-                : dark
-                  ? 'bg-amber-400 hover:bg-amber-300 text-zinc-950 shadow-amber-400/20'
-                  : 'bg-zinc-950 hover:bg-zinc-800 text-white shadow-zinc-950/10'
-            }`}
+            style={{ backgroundColor: '#fbbf24', color: '#09090b' }}
+            className="mt-3 w-full py-2.5 bg-amber-400 hover:bg-amber-300 text-zinc-950 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md cursor-pointer border border-amber-300"
           >
-            <ShoppingBag className="w-3.5 h-3.5 text-inherit" />
-            <span>{product.isTraditional ? 'Pre-Order (Bespoke)' : 'Add to Cart'}</span>
+            <ShoppingBag 
+              className="w-3.5 h-3.5 shrink-0" 
+              style={{ color: '#09090b' }} 
+            />
+            <span style={{ color: '#09090b' }} className="text-zinc-950 font-black">
+              {product.isTraditional ? 'Pre-Order (Bespoke)' : 'Add to Cart'}
+            </span>
           </button>
         </div>
       </div>

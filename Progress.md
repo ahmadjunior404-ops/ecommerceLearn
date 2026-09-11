@@ -79,6 +79,25 @@ The application features:
   - Allows seamless execution of `npm run dev` directly from both the root repository folder and `vite-project/`.
   - **Verification**: Verified dev server launch and build via `--prefix vite-project` (Exit Code 0).
 
+### Milestone 8: QuickViewModal Hardened Inline Styles & "Add To Cart — Checkout" Action Labeling
+- **Timestamp**: September 11, 2026
+- **Context**: User uploaded photo of laptop screen showing the QuickViewModal for "Oversized Resort Collar Breathable Linen Shirt" with the bottom action button appearing as an empty solid black rectangle ("this is what i mean here, the checkout is not showing").
+- **Root Cause & Solution**:
+  - The user referred to the Quick View modal's primary purchase button as "the checkout". Due to the prior `ENOENT` dev server crash and CSS utility cascading/caching, the button appeared as an unrendered solid black shape.
+  - **Hardened Inline Color Enforcement**: Added explicit inline styles directly to `<button>`, `<ShoppingBag />`, and `<span>` in `QuickViewModal.jsx` and `ProductCard.jsx`.
+  - **Dual Action Label**: Updated text explicitly to **`Add To Cart — Checkout`** alongside the shopping bag icon.
+  - **Verification**: Built and verified with `npm run build` (Exit Code 0).
+
+### Milestone 9: Total Elimination of Black Backgrounds — Unified Radiant Gold Action System
+- **Timestamp**: September 11, 2026
+- **Context**: User clarified with photo confirmation: *"i want my check out to not be overshadow by black"*. The entire black background was unwanted on primary action buttons.
+- **Solution & Files Modified**:
+  - **QuickViewModal.jsx**: Replaced the black background button with radiant luxury gold (`bg-amber-400 hover:bg-amber-300`, `style={{ backgroundColor: '#fbbf24', color: '#09090b' }}`) with bold jet black text and icon (`#09090b`). Zero black background on the button.
+  - **ProductCard.jsx**: Updated direct card buttons to match the radiant gold style with bold black text (`style={{ backgroundColor: '#fbbf24', color: '#09090b' }}`).
+  - **CartDrawer.jsx**: Updated checkout button to radiant gold with bold black text **`PROCEED TO CHECKOUT`** (`style={{ backgroundColor: '#fbbf24', color: '#09090b' }}`) and dark Paystack pill.
+  - **Navbar.jsx**: Updated Cart button to matching gold with bold dark text (`style={{ backgroundColor: '#fbbf24', color: '#09090b' }}`).
+  - **Verification**: Verified production build with `npm run build` (Exit Code 0).
+
 ---
 
 ## 📊 3. Feature Inventory & Current Status

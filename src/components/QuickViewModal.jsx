@@ -24,7 +24,8 @@ const QuickViewModal = () => {
     isInWishlist, 
     formatPrice,
     savedMeasurements,
-    user
+    user,
+    setIsCartOpen
   } = useShop();
   
   if (!quickViewProduct) return null;
@@ -72,6 +73,7 @@ const QuickViewModal = () => {
       addToCart(quickViewProduct, selectedSize, quantity);
     }
     setQuickViewProduct(null);
+    setIsCartOpen(true);
   };
 
   const handleResetToSaved = () => {
@@ -341,14 +343,19 @@ const QuickViewModal = () => {
               <div className="flex gap-3">
                 <button
                   onClick={handleAddToCart}
-                  className={`flex-1 py-3.5 font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 ${
-                    isCouture 
-                      ? 'bg-amber-400 hover:bg-amber-300 text-zinc-950 shadow-amber-400/20' 
-                      : 'bg-zinc-950 hover:bg-zinc-800 text-white shadow-zinc-950/20'
-                  }`}
+                  style={{ backgroundColor: '#fbbf24', color: '#09090b' }}
+                  className="flex-1 py-3.5 bg-amber-400 hover:bg-amber-300 text-zinc-950 font-black text-xs uppercase tracking-wider rounded-xl shadow-lg hover:shadow-xl shadow-amber-400/25 transition-all flex items-center justify-center gap-2 cursor-pointer border border-amber-300"
                 >
-                  <ShoppingBag className="w-4 h-4 text-inherit" />
-                  <span>{isCouture ? 'Pre-Order (Bespoke Tailored)' : 'Add To Cart'}</span>
+                  <ShoppingBag 
+                    className="w-4 h-4 shrink-0" 
+                    style={{ color: '#09090b' }} 
+                  />
+                  <span 
+                    className="font-black text-xs uppercase tracking-wider"
+                    style={{ color: '#09090b' }}
+                  >
+                    {isCouture ? 'Pre-Order (Bespoke Tailored)' : 'Add To Cart — Checkout'}
+                  </span>
                 </button>
 
                 <button
