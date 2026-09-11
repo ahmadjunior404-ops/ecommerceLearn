@@ -184,7 +184,7 @@ const Footer = () => {
                   <span>Secure Payments</span>
                 </div>
                 <p className="text-[11px] text-zinc-400">
-                  Secured with Paystack, Flutterwave, and 256-bit bank-grade encryption.
+                  Secured exclusively via Paystack with 256-bit bank-grade encryption.
                 </p>
               </div>
             </div>
@@ -200,12 +200,14 @@ const Footer = () => {
 
           {/* Payment Badges */}
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-[11px] uppercase tracking-wider text-zinc-400 mr-2">Accepted Payments:</span>
-            <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[11px] font-bold text-emerald-400">Paystack</span>
-            <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[11px] font-bold text-amber-400">Flutterwave</span>
-            <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[11px] font-bold text-zinc-300">Mastercard</span>
-            <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[11px] font-bold text-blue-400">Visa</span>
-            <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[11px] font-bold text-white">Apple Pay</span>
+            <span className="text-[11px] uppercase tracking-wider text-zinc-400 mr-2">Exclusive Payment Partner:</span>
+            <span className="px-2.5 py-1 bg-emerald-950/80 border border-emerald-500/40 rounded text-[11px] font-bold text-emerald-400 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              Paystack
+            </span>
+            <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[11px] font-medium text-zinc-400">Cards</span>
+            <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[11px] font-medium text-zinc-400">Bank Transfer</span>
+            <span className="px-2 py-1 bg-zinc-900 border border-zinc-800 rounded text-[11px] font-medium text-zinc-400">USSD</span>
           </div>
         </div>
 

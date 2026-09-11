@@ -41,7 +41,7 @@ const CartDrawer = () => {
       setIsCheckingOut(false);
       clearCart();
       setIsCartOpen(false);
-      alert('🎉 Order Placed Successfully! Your bespoke Nigerian fashion pieces are being tailored. Order reference: #ASA-' + Math.floor(100000 + Math.random() * 900000));
+      alert('🎉 Paystack Payment Successful!\n\nYour order has been confirmed. Order reference: #PSTK-' + Math.floor(100000 + Math.random() * 900000) + '\nYour receipt and tailoring confirmation have been processed.');
     }, 1500);
   };
 
@@ -212,6 +212,18 @@ const CartDrawer = () => {
                 </div>
               </div>
 
+              {/* Payment Channel Indicator */}
+              <div className="bg-white p-2.5 rounded-xl border border-zinc-200 flex items-center justify-between text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  <span className="text-[11px] font-semibold text-zinc-700">Payment Channel</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200/80 px-2 py-0.5 rounded-md font-bold text-[10px]">
+                  <span>Paystack</span>
+                  <span className="text-[8px] bg-emerald-600 text-white px-1 rounded uppercase">Exclusive</span>
+                </div>
+              </div>
+
               {/* Checkout Button */}
               <button
                 onClick={handleSimulateCheckout}
@@ -219,10 +231,13 @@ const CartDrawer = () => {
                 className="w-full py-3.5 bg-amber-400 hover:bg-amber-300 text-zinc-950 text-xs font-black uppercase tracking-wider rounded-xl shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
               >
                 {isCheckingOut ? (
-                  <span>Processing Tailoring Order...</span>
+                  <span className="flex items-center gap-2">
+                    <span className="animate-spin rounded-full h-3 w-3 border-2 border-zinc-950 border-t-transparent"></span>
+                    <span>Connecting to Paystack...</span>
+                  </span>
                 ) : (
                   <>
-                    <span>Proceed to Checkout</span>
+                    <span>Pay with Paystack</span>
                     <ArrowRight className="w-4 h-4" />
                   </>
                 )}
@@ -230,7 +245,7 @@ const CartDrawer = () => {
 
               <div className="flex items-center justify-center gap-2 text-[10px] text-zinc-500 font-medium">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Encrypted & Secured by Paystack / Flutterwave</span>
+                <span>Secured Exclusively by Paystack (Card, Transfer &amp; USSD)</span>
               </div>
 
             </div>

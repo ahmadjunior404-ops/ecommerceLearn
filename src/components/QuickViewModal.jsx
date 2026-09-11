@@ -336,19 +336,19 @@ const QuickViewModal = () => {
 
             </div>
 
-            {/* Actions: Add to Bag / Pre-Order & Wishlist */}
+            {/* Actions: Add to Cart / Pre-Order & Wishlist */}
             <div className="pt-4 border-t border-zinc-200 space-y-3">
               <div className="flex gap-3">
                 <button
                   onClick={handleAddToCart}
-                  className={`flex-1 py-3.5 text-zinc-950 font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 ${
+                  className={`flex-1 py-3.5 font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 ${
                     isCouture 
-                      ? 'bg-amber-400 hover:bg-amber-300 shadow-amber-400/20' 
-                      : 'bg-zinc-950 hover:bg-zinc-800 text-white'
+                      ? 'bg-amber-400 hover:bg-amber-300 text-zinc-950 shadow-amber-400/20' 
+                      : 'bg-zinc-950 hover:bg-zinc-800 text-white shadow-zinc-950/20'
                   }`}
                 >
-                  <ShoppingBag className="w-4 h-4" />
-                  <span>{isCouture ? 'Pre-Order (Bespoke Tailored)' : 'Add To Bag'}</span>
+                  <ShoppingBag className="w-4 h-4 text-inherit" />
+                  <span>{isCouture ? 'Pre-Order (Bespoke Tailored)' : 'Add To Cart'}</span>
                 </button>
 
                 <button

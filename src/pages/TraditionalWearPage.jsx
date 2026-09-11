@@ -22,7 +22,7 @@ const normalizeTraditionalCategory = (cat) => {
 };
 
 const TraditionalWearPage = ({ onNavigate }) => {
-  const { searchQuery, activeCategory, setActiveCategory } = useShop();
+  const { searchQuery, activeCategory, setActiveCategory, navKey } = useShop();
   const [selectedSubcategory, setSelectedSubcategory] = useState(() =>
     normalizeTraditionalCategory(activeCategory)
   );
@@ -30,7 +30,7 @@ const TraditionalWearPage = ({ onNavigate }) => {
 
   React.useEffect(() => {
     setSelectedSubcategory(normalizeTraditionalCategory(activeCategory));
-  }, [activeCategory]);
+  }, [activeCategory, navKey]);
 
   const subcategories = [
     { id: 'All', label: 'All Traditional' },

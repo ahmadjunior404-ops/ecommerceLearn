@@ -13,7 +13,8 @@ import {
   Crown,
   User,
   UserCheck,
-  LogOut
+  LogOut,
+  Clock
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -251,23 +252,38 @@ const Navbar = () => {
                 }`}
               >
                 <span>Traditional Wears</span>
+                <span className="text-[8px] bg-amber-100 text-amber-900 border border-amber-300/60 px-1.5 py-0.2 rounded font-semibold uppercase tracking-wide">
+                  Pre-Order
+                </span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform" />
               </button>
 
               {isCoutureDropdownOpen && (
-                <div className="absolute top-full left-0 w-72 bg-white rounded-2xl shadow-2xl border border-zinc-200 p-3.5 z-50 animate-fade-in text-left">
-                  <div className="text-[10px] font-bold text-zinc-400 tracking-wider uppercase px-2 mb-2">
-                    Nigerian Traditional & Couture
+                <div className="absolute top-full left-0 w-72 bg-white rounded-2xl shadow-2xl border border-zinc-200 p-3 z-50 animate-fade-in text-left">
+                  {/* Discreet Pre-Order Notice */}
+                  <div className="bg-amber-50/80 border border-amber-200/60 rounded-lg px-2.5 py-1.5 mb-2 flex items-center justify-between text-[10px]">
+                    <span className="font-semibold text-amber-900 flex items-center gap-1.5">
+                      <Clock className="w-3 h-3 text-amber-700" />
+                      <span>Bespoke Pre-Order</span>
+                    </span>
+                    <span className="text-[9px] text-zinc-500 font-medium">7-12 Days</span>
+                  </div>
+
+                  <div className="text-[10px] font-bold text-zinc-400 tracking-wider uppercase px-2 mb-1.5">
+                    Nigerian Traditional &amp; Couture
                   </div>
                   
                   <button
                     onClick={() => handleNavClick('traditional', 'Agbada')}
-                    className="w-full text-left p-2.5 rounded-xl hover:bg-amber-50 text-zinc-900 flex items-start gap-2.5 transition-colors group/item"
+                    className="w-full text-left p-2 rounded-xl hover:bg-amber-50 text-zinc-900 flex items-start gap-2.5 transition-colors group/item"
                   >
                     <Crown className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
-                    <div>
-                      <div className="text-xs font-bold text-zinc-900 group-hover/item:text-amber-800">
-                        Royal Grand Agbadas
+                    <div className="flex-1">
+                      <div className="text-xs font-bold text-zinc-900 group-hover/item:text-amber-800 flex items-center justify-between">
+                        <span>Royal Grand Agbadas</span>
+                        <span className="text-[8px] font-medium text-amber-800/80 bg-amber-50/80 px-1 py-0.2 rounded">
+                          Pre-Order
+                        </span>
                       </div>
                       <div className="text-[10px] text-zinc-500 font-normal">
                         Hand-embroidered 3-piece sets in luxury damask
@@ -277,12 +293,15 @@ const Navbar = () => {
 
                   <button
                     onClick={() => handleNavClick('traditional', 'Senator')}
-                    className="w-full text-left p-2.5 rounded-xl hover:bg-amber-50 text-zinc-900 flex items-start gap-2.5 transition-colors group/item mt-1"
+                    className="w-full text-left p-2 rounded-xl hover:bg-amber-50 text-zinc-900 flex items-start gap-2.5 transition-colors group/item mt-0.5"
                   >
                     <Sparkles className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
-                    <div>
-                      <div className="text-xs font-bold text-zinc-900 group-hover/item:text-amber-800">
-                        Imperial Senator Suits
+                    <div className="flex-1">
+                      <div className="text-xs font-bold text-zinc-900 group-hover/item:text-amber-800 flex items-center justify-between">
+                        <span>Imperial Senator Suits</span>
+                        <span className="text-[8px] font-medium text-amber-800/80 bg-amber-50/80 px-1 py-0.2 rounded">
+                          Pre-Order
+                        </span>
                       </div>
                       <div className="text-[10px] text-zinc-500 font-normal">
                         Italian wool blend with geometric chest embroidery
@@ -292,18 +311,48 @@ const Navbar = () => {
 
                   <button
                     onClick={() => handleNavClick('traditional', 'Dashiki')}
-                    className="w-full text-left p-2.5 rounded-xl hover:bg-amber-50 text-zinc-900 flex items-start gap-2.5 transition-colors group/item mt-1"
+                    className="w-full text-left p-2 rounded-xl hover:bg-amber-50 text-zinc-900 flex items-start gap-2.5 transition-colors group/item mt-0.5"
                   >
-                    <Crown className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
-                    <div>
-                      <div className="text-xs font-bold text-zinc-900 group-hover/item:text-amber-800">
-                        Linen Dashikis & Fila Caps
+                    <Sparkles className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
+                    <div className="flex-1">
+                      <div className="text-xs font-bold text-zinc-900 group-hover/item:text-amber-800 flex items-center justify-between">
+                        <span>Dashiki &amp; Kaftans</span>
+                        <span className="text-[8px] font-medium text-amber-800/80 bg-amber-50/80 px-1 py-0.2 rounded">
+                          Pre-Order
+                        </span>
                       </div>
                       <div className="text-[10px] text-zinc-500 font-normal">
-                        Egyptian linen caftans & handwoven Aso-Oke caps
+                        Egyptian linen caftans &amp; tailored sets
                       </div>
                     </div>
                   </button>
+
+                  <button
+                    onClick={() => handleNavClick('traditional', 'Aso-Oke')}
+                    className="w-full text-left p-2 rounded-xl hover:bg-amber-50 text-zinc-900 flex items-start gap-2.5 transition-colors group/item mt-0.5"
+                  >
+                    <Crown className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
+                    <div className="flex-1">
+                      <div className="text-xs font-bold text-zinc-900 group-hover/item:text-amber-800 flex items-center justify-between">
+                        <span>Aso-Oke Fila Caps</span>
+                        <span className="text-[8px] font-medium text-amber-800/80 bg-amber-50/80 px-1 py-0.2 rounded">
+                          Pre-Order
+                        </span>
+                      </div>
+                      <div className="text-[10px] text-zinc-500 font-normal">
+                        Authentic Yoruba handwoven ceremonial caps
+                      </div>
+                    </div>
+                  </button>
+
+                  <div className="border-t border-zinc-100 mt-2.5 pt-2">
+                    <button
+                      onClick={() => handleNavClick('traditional', 'All')}
+                      className="w-full text-center py-1.5 text-xs font-bold text-amber-700 hover:text-amber-800 rounded-lg hover:bg-amber-50 transition-colors"
+                    >
+                      View All Traditional Couture →
+                    </button>
+                  </div>
                 </div>
               )}
             </div>

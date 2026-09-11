@@ -35,8 +35,8 @@ const ProductCard = ({ product, dark = false }) => {
         {/* Tag Badge */}
         <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
           {product.isTraditional ? (
-            <span className="bg-amber-400 text-zinc-950 text-[10px] font-black uppercase px-2.5 py-1 rounded-md tracking-wider shadow-md border border-amber-300">
-              👑 Pre-Order • Bespoke
+            <span className="bg-zinc-950/75 backdrop-blur-md text-amber-300 text-[9px] font-semibold uppercase px-2 py-0.5 rounded tracking-wider border border-amber-400/20">
+              Pre-Order
             </span>
           ) : product.tag ? (
             <span className="bg-zinc-950/85 backdrop-blur-md text-amber-300 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded tracking-wider shadow-sm border border-amber-400/20">
@@ -96,7 +96,7 @@ const ProductCard = ({ product, dark = false }) => {
                   ? 'bg-white hover:bg-amber-400 hover:text-zinc-950 text-zinc-950'
                   : 'bg-zinc-950 hover:bg-amber-500 hover:text-zinc-950 text-white'
             }`}
-            title={product.isTraditional ? 'Pre-Order with measurements' : 'Quick Add to Bag'}
+            title={product.isTraditional ? 'Pre-Order with measurements' : 'Quick Add to Cart'}
           >
             <ShoppingBag className="w-4 h-4" />
           </button>
@@ -156,7 +156,7 @@ const ProductCard = ({ product, dark = false }) => {
             </div>
           </div>
 
-          {/* Direct Mobile Button */}
+          {/* Direct Add to Cart Button */}
           <button
             onClick={() => {
               if (product.isTraditional) {
@@ -165,14 +165,16 @@ const ProductCard = ({ product, dark = false }) => {
                 addToCart(product, selectedSize, 1);
               }
             }}
-            className={`mt-3 w-full sm:hidden py-2 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 ${
+            className={`mt-3 w-full py-2.5 rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm ${
               product.isTraditional 
-                ? 'bg-amber-400 text-zinc-950' 
-                : 'bg-zinc-950 text-white'
+                ? 'bg-amber-400 hover:bg-amber-300 text-zinc-950 shadow-amber-400/20' 
+                : dark
+                  ? 'bg-amber-400 hover:bg-amber-300 text-zinc-950 shadow-amber-400/20'
+                  : 'bg-zinc-950 hover:bg-zinc-800 text-white shadow-zinc-950/10'
             }`}
           >
-            <ShoppingBag className="w-3.5 h-3.5" />
-            <span>{product.isTraditional ? 'Pre-Order (Bespoke)' : 'Add to Bag'}</span>
+            <ShoppingBag className="w-3.5 h-3.5 text-inherit" />
+            <span>{product.isTraditional ? 'Pre-Order (Bespoke)' : 'Add to Cart'}</span>
           </button>
         </div>
       </div>
