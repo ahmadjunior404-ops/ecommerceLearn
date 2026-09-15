@@ -77,7 +77,7 @@ const AccountDrawer = () => {
           image: 'https://i.pinimg.com/736x/38/d2/e2/38d2e22c6a7d0aa2e3a643d9d18d6440.jpg'
         }
       ],
-      deliveryAddress: '14 Admiralty Way, Lekki Phase 1, Lagos'
+      deliveryAddress: '13 Admiralty Way, Lekki Phase 1, Lagos'
     },
     {
       id: 'ASA-7402',
@@ -101,7 +101,7 @@ const AccountDrawer = () => {
           image: 'https://i.pinimg.com/736x/54/51/cd/5451cd28a19aeb7bebdfd01150a8ec1c.jpg'
         }
       ],
-      deliveryAddress: '14 Admiralty Way, Lekki Phase 1, Lagos'
+      deliveryAddress: '13 Admiralty Way, Lekki Phase 1, Lagos'
     }
   ];
 

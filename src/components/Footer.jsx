@@ -87,7 +87,7 @@ const Footer = () => {
                 className="flex items-center gap-2 hover:text-amber-400 text-left transition-colors"
               >
                 <MapPin className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Flagship Atelier: 14 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</span>
+                <span>Flagship Atelier: 13 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</span>
               </button>
               <a 
                 href="https://wa.me/2348123456789"

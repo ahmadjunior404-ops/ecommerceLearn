@@ -135,6 +135,15 @@ The application features:
   - **QuickViewModal.jsx**: Updated the single product page's primary purchase button text from `Add To Cart — Checkout` to `Add to Cart` (rendered uppercase as `ADD TO CART` in pure white `#ffffff` on sleek luxury black `#09090b` with explicit inline styling).
   - **Verification**: Built and verified with `npm run build` (Exit Code 0, 1866 modules transformed).
 
+### Milestone 14: Flagship Atelier Address Update to 13 Admiralty Way, Lekki Phase 1
+- **Timestamp**: September 14, 2026
+- **Context**: User instruction: *"change address in contact to 13 Admiralty Way, Lekki Phase 1"*.
+- **Solution & Files Modified**:
+  - **ContactPage.jsx**: Updated Flagship Atelier address from `14 Admiralty Way, Lekki Phase 1` to `13 Admiralty Way, Lekki Phase 1`.
+  - **Footer.jsx**: Synchronized Flagship Atelier address to `13 Admiralty Way, Lekki Phase 1, Lagos, Nigeria`.
+  - **AboutPage.jsx**: Synchronized Flagship Atelier address to `13 Admiralty Way, Lekki Phase 1, Lagos`.
+- **Verification**: Built and verified with `npm run build` (Exit Code 0, 1866 modules transformed cleanly).
+
 ---
 
 ## 📊 3. Feature Inventory & Current Status

@@ -147,7 +147,7 @@ const ContactPage = ({ onNavigate }) => {
                   Flagship Atelier
                 </div>
                 <div className="text-sm font-bold text-zinc-900 mt-0.5">
-                  14 Admiralty Way, Lekki Phase 1
+                  13 Admiralty Way, Lekki Phase 1
                 </div>
                 <div className="text-xs text-zinc-500 mt-1">
                   Lagos, Nigeria

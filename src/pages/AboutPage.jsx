@@ -54,7 +54,7 @@ const AboutPage = ({ onNavigate }) => {
                   Flagship Atelier
                 </div>
                 <div className="text-sm font-serif font-semibold">
-                  14 Admiralty Way, Lekki Phase 1, Lagos
+                  13 Admiralty Way, Lekki Phase 1, Lagos
                 </div>
               </div>
             </div>
